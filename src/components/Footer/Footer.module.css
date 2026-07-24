@@ -1,39 +1,76 @@
-.card {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+/* =========================================
+   1. DISEÑO BASE (Mobile First - Celulares)
+   ========================================= */
+.footer {
+  /* Color azul oscuro basado en tu diseño */
+  background-color: #0f2042;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
-.card:hover {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.imageContainer {
-  position: relative;
-  width: 100%;
-  height: 250px;
+/* Contenedor de los teléfonos y botones */
+.contactSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* Espacio entre el teléfono y la palabra contacto */
 }
 
-.image {
-  object-fit: cover;
+/* Estilo para cada bloque de contacto (ícono + texto) */
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el ícono y el texto */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
 }
 
-.content {
-  padding: 1rem;
-  background-color: #ffffff;
+.contactItem:hover {
+  opacity: 0.8;
 }
 
-.title {
-  font-weight: bold;
-  font-size: 1.125rem;
-  color: #1f2937;
-  margin: 0 0 0.5rem 0;
+/* Derechos de autor */
+.copyrightSection {
+  text-align: center;
 }
 
-.description {
-  color: #4b5563;
-  font-size: 0.875rem;
+.copyrightSection p {
   margin: 0;
+  font-size: 0.8rem;
+  color: #cbd5e1; /* Un gris claro para que no resalte tanto como los teléfonos */
+}
+
+/* =========================================
+   2. NIVEL TABLETA Y PC (Pantallas >= 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  .footer {
+    padding: 1.5rem 2rem;
+  }
+
+  /* Cambiamos la dirección para que el contacto quede a la izquierda y el copyright a la derecha */
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyrightSection {
+    text-align: right;
+  }
 }

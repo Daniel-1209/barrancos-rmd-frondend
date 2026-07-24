@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import ImageCard from "../components/ImageCard/ImageCard";
 import styles from "./page.module.css"; // Importamos tu CSS puro
+import Footer from "@/components/Footer/Footer";
 
 export default function Inicio() {
   return (
@@ -27,6 +28,7 @@ export default function Inicio() {
           description="Corte, perfilado y cuidado integral del jardín."
         />
       </section>
+      <Footer />
     </main>
   );
 }
