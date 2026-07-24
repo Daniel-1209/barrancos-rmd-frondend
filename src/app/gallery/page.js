@@ -1,4 +1,4 @@
-import ImageCard from "../../components/ImageCard";
+import ImageCard from "../../components/ImageCard/ImageCard";
 import styles from "./gallery.module.css";
 
 export default function Gallery() {

@@ -1,4 +1,4 @@
-import ImageCard from "../components/ImageCard";
+import ImageCard from "../components/ImageCard/ImageCard";
 import styles from "./page.module.css"; // Importamos tu CSS puro
 
 export default function Inicio() {
