@@ -1,9 +1,11 @@
+import Navbar from "@/components/Navbar/Navbar";
 import ImageCard from "../components/ImageCard/ImageCard";
 import styles from "./page.module.css"; // Importamos tu CSS puro
 
 export default function Inicio() {
   return (
     <main className={styles.main}>
+      <Navbar />
       <header className={styles.header}>
         <h1 className={styles.mainTitle}>Barrancos Remodeling LLC</h1>
         <p className={styles.subtitle}>

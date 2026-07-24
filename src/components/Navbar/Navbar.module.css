@@ -1,39 +1,149 @@
-.card {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-}
-
-.imageContainer {
-  position: relative;
-  width: 100%;
-  height: 250px;
-}
-
-.image {
-  object-fit: cover;
-}
-
-.content {
-  padding: 1rem;
+/* =========================================
+   1. DISEÑO BASE (Mobile First - Celulares)
+   ========================================= */
+.navbar {
   background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.title {
-  font-weight: bold;
-  font-size: 1.125rem;
-  color: #1f2937;
-  margin: 0 0 0.5rem 0;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.description {
-  color: #4b5563;
-  font-size: 0.875rem;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón Hamburguesa */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.bar {
+  height: 2px;
+  width: 100%;
+  background-color: #111827;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Lista de enlaces (Oculta por defecto en móvil) */
+.navLinks {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease-in-out,
+    padding 0.4s ease-in-out;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  list-style: none;
   margin: 0;
+}
+
+/* Cuando el menú se activa en móvil */
+.navLinks.menuActivo {
+  max-height: 400px;
+  padding: 2rem 0;
+}
+
+/* Estilos de los enlaces */
+.link {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+/* El diseño de la línea azul debajo del link activo, igual a tu foto */
+.linkActivo {
+  text-decoration: none;
+  color: #1e3a8a; /* Azul oscuro corporativo */
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid #1e3a8a;
+  padding-bottom: 4px;
+}
+
+.flecha {
+  margin-top: 2px;
+}
+
+/* =========================================
+   2. NIVEL TABLETA (Pantallas >= 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  /* Ocultamos la hamburguesa */
+  .hamburger {
+    display: none;
+  }
+
+  /* Cambiamos la lista de vertical a horizontal */
+  .navLinks {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    gap: 1.5rem; /* Separación media para tabletas */
+  }
+
+  /* Aseguramos que siempre se muestre en tableta, sin importar el estado menuActivo */
+  .navLinks.menuActivo {
+    padding: 0;
+  }
+}
+
+/* =========================================
+   3. NIVEL PC / ESCRITORIO (Pantallas >= 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+  .container {
+    padding: 1.2rem 2rem;
+  }
+
+  .navLinks {
+    gap: 2.5rem; /* Más separación para pantallas grandes */
+  }
+
+  /* Efecto hover solo para PC (con ratón) */
+  .link:hover {
+    color: #1e3a8a;
+  }
 }
