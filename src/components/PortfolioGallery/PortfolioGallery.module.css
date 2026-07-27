@@ -1,0 +1,169 @@
+/* =========================================
+   DISEÑO BASE (Mobile First)
+   ========================================= */
+.portfolioSection {
+  padding: 3rem 1rem;
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Botones de Filtro */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filterBtn {
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterBtn.active,
+.filterBtn:hover {
+  background-color: #16538c;
+  color: #ffffff;
+}
+
+/* Cuadrícula (Grid) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en móvil */
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Tarjetas */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.cardInfo {
+  padding: 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Variaciones de color para las tarjetas (como en tu diseño) */
+.cardBlue {
+  background-color: #0f2042;
+}
+.cardGrey {
+  background-color: #6b7280;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.cardCategory {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin: 0 0 1rem 0;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.viewBtn {
+  background-color: #ffffff;
+  color: #111827;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.loadMoreContainer {
+  text-align: center;
+}
+
+.loadMoreBtn {
+  background-color: #0f2042;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* =========================================
+   NIVEL TABLETA Y PC (>= 768px y 1024px)
+   ========================================= */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tableta */
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+  }
+}
