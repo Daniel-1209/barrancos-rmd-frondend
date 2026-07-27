@@ -20,7 +20,7 @@ export default function Hero() {
         <div className={styles.imageWrapper}>
           <div className={styles.imageContainer}>
             <Image
-              src="/images/cocina-terminada.jpg"
+              src="/images/cocina-terminada.png"
               alt="Sala de estar moderna remodelada"
               fill
               className={styles.image}

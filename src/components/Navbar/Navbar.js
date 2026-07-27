@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link href="/" className={styles.logo}>
           {/* Asegúrate de tener tu logo en la carpeta public/ */}
           <Image
-            src="/logo.png"
+            src="/Barrancos-LHR02.png"
             alt="Barrancos Remodeling LLC Logo"
             width={180}
             height={50}
