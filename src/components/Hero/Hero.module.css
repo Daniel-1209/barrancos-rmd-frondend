@@ -1,0 +1,106 @@
+/* =========================================
+   DISEÑO BASE (Mobile First)
+   ========================================= */
+.heroSection {
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.textContent {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.ctaButton {
+  background-color: #16538c; /* Azul del diseño */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -25px; /* Hace que el botón se superponga a la imagen */
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.ctaButton:hover {
+  background-color: #0f3d6b;
+}
+
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   NIVEL TABLETA Y PC (>= 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 4rem 2rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .imageContainer {
+    height: 450px; /* Imagen más grande en PC */
+  }
+  .ctaButton {
+    font-size: 1.3rem;
+    padding: 1.2rem 3rem;
+  }
+}
