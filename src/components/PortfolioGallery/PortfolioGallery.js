@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./PortfolioGallery.module.css";
+import Link from "next/link";
 
 export default function PortfolioGallery() {
   // Datos de ejemplo simulando tu diseño
@@ -91,7 +92,12 @@ export default function PortfolioGallery() {
                     </svg>
                     {proyecto.location}
                   </span>
-                  <button className={styles.viewBtn}>Ver Proyecto</button>
+                  <Link
+                    href={`/proyects/${proyecto.id}`}
+                    className={styles.viewBtn}
+                  >
+                    Ver Proyecto
+                  </Link>
                 </div>
               </div>
             </div>

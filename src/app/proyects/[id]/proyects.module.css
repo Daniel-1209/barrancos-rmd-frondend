@@ -1,0 +1,236 @@
+/* =========================================
+   1. DISEÑO BASE (Mobile First - Celular)
+   ========================================= */
+.mainContainer {
+  background-color: #ffffff;
+  padding: 2rem 1rem 4rem 1rem;
+  min-height: 100vh;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #374151;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Barra de información (Versión Celular: Lista vertical clara) */
+.infoBar {
+  background-color: #fdfbf7;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #6d5d4b; /* Color café del diseño */
+  display: block; /* Visible en celular */
+}
+
+.infoLabel {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #4b5563;
+  margin-bottom: 0.2rem;
+}
+
+.infoValue {
+  font-size: 0.95rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Galería */
+.galleryContainer {
+  margin-bottom: 2rem;
+}
+
+.mainImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* Flechas del carrusel */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s;
+}
+
+.arrowBtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+
+/* Cuadrícula de miniaturas */
+.thumbnailsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.thumbWrapper {
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.thumbWrapper.activeThumb {
+  border-color: #6d5d4b; /* Resalta la miniatura activa en color café */
+  opacity: 0.6;
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Descripción */
+.descriptionSection {
+  text-align: center;
+}
+
+.descriptionText {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.linkText {
+  color: #111827;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.backButton {
+  display: inline-block;
+  background-color: #6d5d4b; /* Color café del botón */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  width: 100%; /* Botón ancho en celular */
+}
+
+.backButton:hover {
+  background-color: #554739;
+}
+
+/* =========================================
+   2. NIVEL TABLETA Y PC (>= 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 2.5rem;
+  }
+
+  /* Transformación de la barra de información a Estilo PC */
+  .infoBar {
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #6d5d4b; /* Fondo café sólido */
+    border: none;
+    padding: 1.5rem;
+    color: #ffffff;
+  }
+
+  .icon {
+    display: none;
+  } /* Ocultamos los íconos */
+
+  .infoLabel {
+    color: #d1d5db;
+    font-size: 0.9rem;
+  } /* Texto claro */
+  .infoValue {
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+
+  .mainImageWrapper {
+    height: 500px; /* Imagen mucho más grande */
+  }
+
+  .thumbnailsGrid {
+    grid-template-columns: repeat(8, 1fr); /* 8 miniaturas en una fila */
+    gap: 1rem;
+  }
+
+  .descriptionText {
+    text-align: center;
+  }
+
+  .backButton {
+    width: auto;
+  } /* Botón de tamaño normal */
+}
