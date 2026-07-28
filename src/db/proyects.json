@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Remodelación Moderna de Sala de Estar",
+    "label": "Remodelación",
+    "category": "remodelacion-sala",
+    "location": "Atlanta, GA",
+    "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+    "link": "/proyectos/remodelacion-sala"
+  },
+  {
+    "id": 2,
+    "title": "Instalación de Techo Residencial",
+    "label": "Remodelación",
+    "category": "roofin-residencial",
+    "location": "Atlanta, GA",
+    "image": "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=800&q=80",
+    "link": "/proyectos/instalacion-techo"
+  },
+  {
+    "id": 3,
+    "title": "Remodelación de Cocina Contemporánea",
+    "label": "Remodelación",
+    "category": "cocinas",
+    "location": "Atlanta, GA",
+    "image": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80",
+    "link": "/proyectos/remodelacion-cocina"
+  },
+  {
+    "id": 4,
+    "title": "Renovación Completa de Baño Principal",
+    "label": "Remodelación",
+    "category": "bano",
+    "location": "Atlanta, GA",
+    "image": "https://images.unsplash.com/photo-1552321554-5d51f21616c6?auto=format&fit=crop&w=800&q=80",
+    "link": "/proyectos/renovacion-bano"
+  },
+  {
+    "id": 5,
+    "title": "Terraza y Área Exterior de Lujo",
+    "label": "Remodelación",
+    "category": "EXTERIORES",
+    "location": "Atlanta, GA",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
+    "link": "/proyectos/terraza-exterior"
+  },
+  {
+    "id": 6,
+    "title": "Ampliación de Garaje y Segundo Piso",
+    "label": "Remodelación",
+    "category": "AMPLIACIONES",
+    "location": "Atlanta, GA",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+    "link": "/proyectos/ampliacion-garaje"
+  }
+]
