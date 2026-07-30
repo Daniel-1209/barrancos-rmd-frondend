@@ -3,13 +3,13 @@
    ========================================= */
 .mainContainer {
   background-color: #ffffff;
-  padding: 2rem 1rem 4rem 1rem;
   min-height: 100vh;
 }
 
 .contentWrapper {
   max-width: 1200px;
-  margin: 0 auto;
+  padding: 0rem 1rem;
+  margin: 20px auto;
 }
 
 .header {

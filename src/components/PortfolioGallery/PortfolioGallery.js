@@ -1,9 +1,22 @@
+"use client";
 import Image from "next/image";
 import styles from "./PortfolioGallery.module.css";
 import Link from "next/link";
 import ProyectsDB from "../../db/proyects.json";
 
 export default function PortfolioGallery() {
+  // Función que maneja el desplazamiento hacia la tarjeta
+  const scrollToCategoria = (nombreCategoria) => {
+    // 1. Busca en el DOM el primer elemento que tenga el data-categoria exacto
+    const elemento = document.querySelector(
+      `[data-category="${nombreCategoria}"]`,
+    );
+
+    // 2. Si lo encuentra, hace un scroll suave hasta él
+    if (elemento) {
+      elemento.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <section className={styles.portfolioSection}>
       <div className={styles.container}>
@@ -17,18 +30,25 @@ export default function PortfolioGallery() {
 
         {/* Filtros */}
         <div className={styles.filters}>
-          <button className={`${styles.filterBtn} ${styles.active}`}>
-            TODOS
-          </button>
-          <button className={styles.filterBtn}>REMODELACIÓN COMPLETA</button>
-          <button className={styles.filterBtn}>TECHOS & CUBIERTAS</button>
-          <button className={styles.filterBtn}>BAÑOS & COCINAS</button>
+          {ProyectsDB.map((proyect) => (
+            <button
+              key={`Proyect-${proyect.id}`}
+              className={styles.filterBtn}
+              onClick={() => scrollToCategoria(proyect.label)}
+            >
+              {proyect.label}
+            </button>
+          ))}
         </div>
 
         {/* Cuadrícula de Proyectos */}
         <div className={styles.grid}>
           {ProyectsDB.map((proyect) => (
-            <div key={proyect.id} className={styles.card}>
+            <div
+              key={proyect.id}
+              className={styles.card}
+              data-category={proyect.label}
+            >
               <div className={styles.imageContainer}>
                 <Image
                   src={proyect.image}
@@ -39,7 +59,7 @@ export default function PortfolioGallery() {
               </div>
               <div className={`${styles.cardInfo} ${styles.cardBlue}`}>
                 <h3 className={styles.cardTitle}>{proyect.title}</h3>
-                <p className={styles.cardCategory}>{proyect.category}</p>
+                <p className={styles.cardCategory}>{proyect.label}</p>
                 <div className={styles.cardFooter}>
                   <span className={styles.location}>
                     <svg
@@ -58,7 +78,7 @@ export default function PortfolioGallery() {
                     {proyect.location}
                   </span>
                   <Link
-                    href={`/proyects/${proyect.category}`}
+                    href={`/proyects/${proyect.link}`}
                     className={styles.viewBtn}
                   >
                     Ver Proyectos

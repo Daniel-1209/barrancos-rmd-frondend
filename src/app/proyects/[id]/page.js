@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./proyects.module.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 export default function ProyectoDetalle() {
   // Arreglo de imágenes gratuitas de Unsplash para pruebas
@@ -31,6 +33,7 @@ export default function ProyectoDetalle() {
 
   return (
     <main className={styles.mainContainer}>
+      <Navbar />
       <div className={styles.contentWrapper}>
         {/* ENCABEZADO */}
         <header className={styles.header}>
@@ -39,45 +42,6 @@ export default function ProyectoDetalle() {
             Renovación Completa de Baño Principal, Atlanta
           </h2>
         </header>
-
-        {/* BARRA DE INFORMACIÓN (Cambia drásticamente de Móvil a PC en el CSS) */}
-        <div className={styles.infoBar}>
-          <div className={styles.infoItem}>
-            <span className={styles.icon}>👤</span>
-            <div>
-              <div className={styles.infoLabel}>CLIENTE:</div>
-              <div className={styles.infoValue}>Privado</div>
-            </div>
-          </div>
-          <div className={styles.infoItem}>
-            <span className={styles.icon}>📍</span>
-            <div>
-              <div className={styles.infoLabel}>UBICACIÓN:</div>
-              <div className={styles.infoValue}>Atlanta, Georgia</div>
-            </div>
-          </div>
-          <div className={styles.infoItem}>
-            <span className={styles.icon}>🛁</span>
-            <div>
-              <div className={styles.infoLabel}>TIPO:</div>
-              <div className={styles.infoValue}>Baños & Cocinas</div>
-            </div>
-          </div>
-          <div className={styles.infoItem}>
-            <span className={styles.icon}>📅</span>
-            <div>
-              <div className={styles.infoLabel}>AÑO:</div>
-              <div className={styles.infoValue}>2026</div>
-            </div>
-          </div>
-          <div className={styles.infoItem}>
-            <span className={styles.icon}>📏</span>
-            <div>
-              <div className={styles.infoLabel}>ÁREA:</div>
-              <div className={styles.infoValue}>12 m²</div>
-            </div>
-          </div>
-        </div>
 
         {/* GALERÍA DE IMÁGENES */}
         <section className={styles.galleryContainer}>
@@ -120,6 +84,45 @@ export default function ProyectoDetalle() {
           </div>
         </section>
 
+        {/* BARRA DE INFORMACIÓN (Cambia drásticamente de Móvil a PC en el CSS) */}
+        <div className={styles.infoBar}>
+          <div className={styles.infoItem}>
+            <span className={styles.icon}>👤</span>
+            <div>
+              <div className={styles.infoLabel}>CLIENTE:</div>
+              <div className={styles.infoValue}>Privado</div>
+            </div>
+          </div>
+          <div className={styles.infoItem}>
+            <span className={styles.icon}>📍</span>
+            <div>
+              <div className={styles.infoLabel}>UBICACIÓN:</div>
+              <div className={styles.infoValue}>Atlanta, Georgia</div>
+            </div>
+          </div>
+          <div className={styles.infoItem}>
+            <span className={styles.icon}>🛁</span>
+            <div>
+              <div className={styles.infoLabel}>TIPO:</div>
+              <div className={styles.infoValue}>Baños & Cocinas</div>
+            </div>
+          </div>
+          <div className={styles.infoItem}>
+            <span className={styles.icon}>📅</span>
+            <div>
+              <div className={styles.infoLabel}>AÑO:</div>
+              <div className={styles.infoValue}>2026</div>
+            </div>
+          </div>
+          <div className={styles.infoItem}>
+            <span className={styles.icon}>📏</span>
+            <div>
+              <div className={styles.infoLabel}>ÁREA:</div>
+              <div className={styles.infoValue}>12 m²</div>
+            </div>
+          </div>
+        </div>
+
         {/* DESCRIPCIÓN Y BOTÓN DE REGRESO */}
         <div className={styles.descriptionSection}>
           <p className={styles.descriptionText}>
@@ -137,6 +140,7 @@ export default function ProyectoDetalle() {
           </Link>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
