@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import Link from "next/link";
 import styles from "./proyects.module.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import ProyectsDB from "../../../db/proyects.json";
 
-export default function ProyectoDetalle() {
+export default function ProyectoDetalle({ params }) {
+  // Find actual proyect
+  const { id } = use(params);
+  const ActualProyect = ProyectsDB.find((p) => p.link === id);
+  console.log("My proyect actual => ", ActualProyect);
+
   // Arreglo de imágenes gratuitas de Unsplash para pruebas
   const imagenes = [
     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
