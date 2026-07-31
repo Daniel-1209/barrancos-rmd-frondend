@@ -228,9 +228,12 @@
 
   .descriptionText {
     text-align: center;
+    color: #fdfbf7;
   }
 
   .backButton {
     width: auto;
+    background-color: #fdfbf7;
+    color: #4b5563;
   } /* Botón de tamaño normal */
 }
