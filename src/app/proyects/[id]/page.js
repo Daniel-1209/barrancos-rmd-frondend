@@ -41,9 +41,7 @@ export default function ProyectoDetalle({ params }) {
         {/* ENCABEZADO */}
         <header className={styles.header}>
           <h1 className={styles.title}>DETALLES DEL PROYECTO:</h1>
-          <h2 className={styles.subtitle}>
-            Renovación Completa de Baño Principal, Atlanta
-          </h2>
+          <h2 className={styles.subtitle}>{ActualProyect?.title}</h2>
         </header>
 
         {/* GALERÍA DE IMÁGENES */}

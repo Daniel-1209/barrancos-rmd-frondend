@@ -42,7 +42,7 @@ export default function PortfolioGallery() {
         </div>
 
         {/* Cuadrícula de Proyectos */}
-        <div className={styles.grid}>
+        <div id="servicesGallery" className={styles.grid}>
           {ProyectsDB?.map((proyect) => (
             <div
               key={proyect?.id}

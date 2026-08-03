@@ -65,9 +65,9 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/nosotros"
+              href="/#nosotros"
               className={
-                pathname === "/nosotros" ? styles.linkActivo : styles.link
+                pathname === "/#nosotros" ? styles.linkActivo : styles.link
               }
               onClick={() => setMenuAbierto(false)}
             >
@@ -76,9 +76,11 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/servicios"
+              href="/#servicesGallery"
               className={
-                pathname === "/servicios" ? styles.linkActivo : styles.link
+                pathname === "/#servicesGallery"
+                  ? styles.linkActivo
+                  : styles.link
               }
               onClick={() => setMenuAbierto(false)}
             >
@@ -102,22 +104,12 @@ export default function Navbar() {
               </svg>
             </Link>
           </li>
+
           <li>
             <Link
-              href="/galeria"
+              href="/#formulario"
               className={
-                pathname === "/galeria" ? styles.linkActivo : styles.link
-              }
-              onClick={() => setMenuAbierto(false)}
-            >
-              Portafolio
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/formulario"
-              className={
-                pathname === "/formulario" ? styles.linkActivo : styles.link
+                pathname === "/#formulario" ? styles.linkActivo : styles.link
               }
               onClick={() => setMenuAbierto(false)}
             >
