@@ -30,36 +30,37 @@ export default function PortfolioGallery() {
 
         {/* Filtros */}
         <div className={styles.filters}>
-          {ProyectsDB.map((proyect) => (
+          {ProyectsDB?.map((proyect) => (
             <button
-              key={`Proyect-${proyect.id}`}
+              key={`Proyect-${proyect?.id}`}
               className={styles.filterBtn}
-              onClick={() => scrollToCategoria(proyect.label)}
+              onClick={() => scrollToCategoria(proyect?.label)}
             >
-              {proyect.label}
+              {proyect?.label}
             </button>
           ))}
         </div>
 
         {/* Cuadrícula de Proyectos */}
         <div className={styles.grid}>
-          {ProyectsDB.map((proyect) => (
+          {ProyectsDB?.map((proyect) => (
             <div
-              key={proyect.id}
+              key={proyect?.id}
               className={styles.card}
-              data-category={proyect.label}
+              data-category={proyect?.label}
             >
               <div className={styles.imageContainer}>
                 <Image
-                  src={proyect.image}
-                  alt={proyect.title}
+                  src={proyect?.image}
+                  alt={proyect?.title}
                   fill
                   className={styles.image}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <div className={`${styles.cardInfo} ${styles.cardBlue}`}>
-                <h3 className={styles.cardTitle}>{proyect.title}</h3>
-                <p className={styles.cardCategory}>{proyect.label}</p>
+                <h3 className={styles.cardTitle}>{proyect?.title}</h3>
+                <p className={styles.cardCategory}>{proyect?.label}</p>
                 <div className={styles.cardFooter}>
                   <span className={styles.location}>
                     <svg
@@ -75,10 +76,10 @@ export default function PortfolioGallery() {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                       <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                    {proyect.location}
+                    {proyect?.location}
                   </span>
                   <Link
-                    href={`/proyects/${proyect.link}`}
+                    href={`/proyects/${proyect?.link}`}
                     className={styles.viewBtn}
                   >
                     Ver Proyectos
@@ -87,11 +88,6 @@ export default function PortfolioGallery() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Botón Cargar Más */}
-        <div className={styles.loadMoreContainer}>
-          <button className={styles.loadMoreBtn}>Cargar más</button>
         </div>
       </div>
     </section>
