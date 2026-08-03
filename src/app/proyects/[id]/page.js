@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import ProyectsDB from "../../../db/proyects.json";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function ProyectoDetalle({ params }) {
   // Find actual proyect
@@ -46,45 +47,58 @@ export default function ProyectoDetalle({ params }) {
         </header>
 
         {/* GALERÍA DE IMÁGENES */}
-        <section className={styles.galleryContainer}>
-          {/* Imagen Principal */}
-          <div className={styles.mainImageWrapper}>
-            <button
-              className={`${styles.arrowBtn} ${styles.left}`}
-              onClick={anteriorImagen}
-            >
-              &#10094;
-            </button>
-            <img
-              src={imagenes[imagenActiva]}
-              alt="Proyecto remodelación"
-              className={styles.mainImage}
-            />
-            <button
-              className={`${styles.arrowBtn} ${styles.right}`}
-              onClick={siguienteImagen}
-            >
-              &#10095;
-            </button>
-          </div>
-
-          {/* Miniaturas (Thumbnails) */}
-          <div className={styles.thumbnailsGrid}>
-            {imagenes.map((img, index) => (
-              <div
-                key={index}
-                className={`${styles.thumbWrapper} ${imagenActiva === index ? styles.activeThumb : ""}`}
-                onClick={() => setImagenActiva(index)}
+        {imagenes.length !== 0 ? (
+          <section className={styles.galleryContainer}>
+            {/* Imagen Principal */}
+            <div className={styles.mainImageWrapper}>
+              <button
+                className={`${styles.arrowBtn} ${styles.left}`}
+                onClick={anteriorImagen}
               >
-                <img
-                  src={img}
-                  alt={`Miniatura ${index + 1}`}
-                  className={styles.thumbImage}
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+                &#10094;
+              </button>
+
+              {/* Reemplazamos <img> por <Image /> */}
+              <Image
+                src={imagenes[imagenActiva]}
+                alt="Proyecto remodelación"
+                fill
+                priority={true} // Le dice a Next.js que esta imagen es la más importante
+                sizes="(max-width: 768px) 100vw, 800px" // Pide la versión de alta resolución
+                className={styles.mainImage}
+              />
+
+              <button
+                className={`${styles.arrowBtn} ${styles.right}`}
+                onClick={siguienteImagen}
+              >
+                &#10095;
+              </button>
+            </div>
+
+            {/* Miniaturas (Thumbnails) */}
+            <div className={styles.thumbnailsGrid}>
+              {imagenes?.map((img, index) => (
+                <div
+                  key={index}
+                  className={`${styles.thumbWrapper} ${imagenActiva === index ? styles.activeThumb : ""}`}
+                  onClick={() => setImagenActiva(index)}
+                >
+                  {/* Reemplazamos <img> por <Image /> en las miniaturas */}
+                  <Image
+                    src={img}
+                    alt={`Miniatura ${index + 1}`}
+                    fill
+                    sizes="150px" // ¡AQUÍ ESTÁ LA MAGIA! Next.js solo descargará una versión diminuta de la foto.
+                    className={styles.thumbImage}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <></>
+        )}
 
         {/* BARRA DE INFORMACIÓN (Cambia drásticamente de Móvil a PC en el CSS) */}
         <div className={styles.infoBar}>

@@ -8,30 +8,33 @@
 
 .contentWrapper {
   max-width: 1200px;
-  padding: 0rem 1rem;
-  margin: 20px auto;
+  padding: 0rem 1.5rem; /* Un poco más de respiro a los lados en celular */
+  margin: 30px auto;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #374151;
   font-weight: 700;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Le da un toque más premium al subtítulo */
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #111827;
   margin: 0.5rem 0 0 0;
+  line-height: 1.2;
 }
 
-/* Barra de información (Versión Celular: Lista vertical clara) */
+/* Barra de información (Versión Celular) */
 .infoBar {
   background-color: #fdfbf7;
   border: 1px solid #e5e7eb;
@@ -40,7 +43,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .infoItem {
@@ -51,36 +54,37 @@
 
 .icon {
   font-size: 1.5rem;
-  color: #6d5d4b; /* Color café del diseño */
-  display: block; /* Visible en celular */
+  color: #6d5d4b;
+  display: block;
 }
 
 .infoLabel {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: bold;
   color: #4b5563;
   margin-bottom: 0.2rem;
+  text-transform: uppercase;
 }
 
 .infoValue {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #111827;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Galería */
 .galleryContainer {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .mainImageWrapper {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 300px; /* Un poco más alto en celular para no aplastar la imagen */
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .mainImage {
@@ -98,26 +102,30 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 44px; /* Un poco más grandes para ser fáciles de tocar en celular */
+  height: 44px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transition: background-color 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+  border-radius: 4px; /* Un pequeño borde redondeado */
 }
 
 .arrowBtn:hover {
   background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.05); /* Pequeño efecto al pasar el mouse */
 }
 
 .left {
-  left: 0;
+  left: 10px; /* Separado del borde */
 }
 .right {
-  right: 0;
+  right: 10px; /* Separado del borde */
 }
 
 /* Cuadrícula de miniaturas */
@@ -128,17 +136,22 @@
 }
 
 .thumbWrapper {
+  position: relative; /* ¡VITAL! Necesario para que Next.js <Image fill> funcione bien */
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
+}
+
+.thumbWrapper:hover {
+  opacity: 0.8;
 }
 
 .thumbWrapper.activeThumb {
-  border-color: #6d5d4b; /* Resalta la miniatura activa en color café */
-  opacity: 0.6;
+  border-color: #6d5d4b;
+  opacity: 0.5;
 }
 
 .thumbImage {
@@ -149,15 +162,15 @@
 
 /* Descripción */
 .descriptionSection {
-  text-align: center;
+  text-align: left; /* Mejor para lectura en móvil */
+  margin-bottom: 3rem;
 }
 
 .descriptionText {
   color: #4b5563;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  text-align: left;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
 .linkText {
@@ -168,19 +181,22 @@
 
 .backButton {
   display: inline-block;
-  background-color: #6d5d4b; /* Color café del botón */
+  background-color: #6d5d4b;
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 8px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s;
-  width: 100%; /* Botón ancho en celular */
+  font-size: 0.95rem;
+  text-align: center;
+  transition: all 0.3s;
+  width: 100%;
+  border: 2px solid #6d5d4b;
 }
 
 .backButton:hover {
   background-color: #554739;
+  border-color: #554739;
 }
 
 /* =========================================
@@ -188,52 +204,71 @@
    ========================================= */
 @media (min-width: 768px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
+
   .subtitle {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   /* Transformación de la barra de información a Estilo PC */
   .infoBar {
     flex-direction: row;
-    justify-content: space-around;
-    background-color: #6d5d4b; /* Fondo café sólido */
-    border: none;
-    padding: 1.5rem;
+    justify-content: space-between; /* Mejor distribución horizontal */
+    background-color: #6d5d4b;
+    border-radius: 12px;
+    padding: 1.5rem 3rem;
     color: #ffffff;
   }
 
   .icon {
     display: none;
-  } /* Ocultamos los íconos */
+  }
 
   .infoLabel {
     color: #d1d5db;
     font-size: 0.9rem;
-  } /* Texto claro */
+  }
+
   .infoValue {
     color: #ffffff;
     font-size: 1.1rem;
   }
 
   .mainImageWrapper {
-    height: 500px; /* Imagen mucho más grande */
+    height: 550px; /* Tamaño imponente para monitores grandes */
+    border-radius: 16px;
   }
 
   .thumbnailsGrid {
-    grid-template-columns: repeat(8, 1fr); /* 8 miniaturas en una fila */
+    grid-template-columns: repeat(8, 1fr);
     gap: 1rem;
   }
 
-  .descriptionText {
+  /* Limitamos el ancho del texto en PC para que no sea cansado de leer */
+  .descriptionSection {
     text-align: center;
-    color: #fdfbf7;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .descriptionText {
+    color: #fdfeff;
+    font-size: 1.1rem;
+  }
+
+  .linkText {
+    color: #d1d5db;
   }
 
   .backButton {
     width: auto;
-    background-color: #fdfbf7;
-    color: #4b5563;
-  } /* Botón de tamaño normal */
+    background-color: #ede8e2;
+    color: #554739;
+  }
+
+  .backButton:hover {
+    background-color: #fff7ee;
+    color: #bea4a4;
+  }
 }
