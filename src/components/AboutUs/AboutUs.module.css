@@ -1,0 +1,110 @@
+/* =========================================
+   1. DISEÑO BASE (Mobile First - Celulares)
+   ========================================= */
+.aboutSection {
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  scroll-margin-top: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Imagen - ACTUALIZADO PARA NEXT/IMAGE */
+.imageWrapper {
+  position: relative; /* ¡OBLIGATORIO para usar Image con la propiedad fill! */
+  width: 100%;
+  min-height: 300px; /* Le damos altura explícita para celular */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.image {
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+}
+
+/* Textos */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #16538c;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.2rem 0;
+}
+
+.ctaButton {
+  align-self: flex-start;
+  margin-top: 1rem;
+  background-color: #0f2042;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #16538c;
+}
+
+/* =========================================
+   2. NIVEL TABLETA Y PC (Pantallas >= 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  .aboutSection {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: stretch; /* Permite que la imagen se estire al tamaño del texto */
+    gap: 4rem;
+  }
+
+  .imageWrapper {
+    flex: 1;
+    min-height: auto; /* Quitamos la restricción de altura en PC */
+  }
+
+  .textContent {
+    flex: 1;
+    padding: 2rem 0;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+}

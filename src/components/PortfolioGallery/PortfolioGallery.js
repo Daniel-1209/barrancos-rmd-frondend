@@ -18,7 +18,7 @@ export default function PortfolioGallery() {
     }
   };
   return (
-    <section className={styles.portfolioSection}>
+    <section id="services" className={styles.portfolioSection}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>NUESTROS SERVICIOS DISPONIBLES</h2>

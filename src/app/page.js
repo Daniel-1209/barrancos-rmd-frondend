@@ -4,6 +4,7 @@ import styles from "./page.module.css"; // Importamos tu CSS puro
 import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import PortfolioGallery from "@/components/PortfolioGallery/PortfolioGallery";
+import AboutUs from "@/components/AboutUs/AboutUs";
 
 export default function Inicio() {
   return (
@@ -16,6 +17,9 @@ export default function Inicio() {
 
       {/* PortfolioGallery  */}
       <PortfolioGallery />
+
+      {/* About Us */}
+      <AboutUs />
 
       {/* Footer */}
       <Footer />
