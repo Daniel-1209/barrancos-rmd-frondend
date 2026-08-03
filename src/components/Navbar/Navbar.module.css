@@ -69,8 +69,8 @@
 
 /* Cuando el menú se activa en móvil */
 .navLinks.menuActivo {
-  max-height: 400px;
-  padding: 2rem 0;
+  max-height: 600px;
+  padding: 2rem 0 3rem 0;
 }
 
 /* Estilos de los enlaces */
@@ -101,6 +101,116 @@
 .flecha {
   margin-top: 2px;
 }
+.contactoWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho en celular */
+  margin-top: 1rem;
+}
+
+/* El botón principal de contacto (Llamativo) */
+.linkBoton {
+  background-color: #16538c; /* Azul corporativo */
+  color: #ffffff;
+  border: none;
+  border-radius: 50px; /* Bordes bien redondeados */
+  padding: 0.8rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(22, 83, 140, 0.35); /* Sombra para dar relieve */
+  transition: all 0.3s ease;
+  width: max-content; /* Un poco de margen a los lados en celular */
+  font-family: inherit;
+}
+
+.linkBoton:hover {
+  background-color: #0f3d6b;
+  transform: translateY(-2px); /* Efecto de que se levanta al pasar el mouse */
+  box-shadow: 0 6px 16px rgba(22, 83, 140, 0.5);
+}
+
+.flechaRotada {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* La caja que se despliega */
+.dropdownContacto {
+  display: flex;
+  flex-direction: column; /* Esto arregla tu problema: pone uno debajo del otro */
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-top: 1rem;
+  width: 90%;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  border: 1px solid #f3f4f6;
+
+  /* Animación de entrada */
+  animation: deslizarAbajo 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top center;
+}
+
+@keyframes deslizarAbajo {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+/* Cada opción dentro de la caja */
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1.2rem 1.5rem;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f3f4f6; /* Línea separadora sutil */
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover en las opciones */
+.dropdownItem:hover {
+  background-color: #f8fafc;
+  color: #16538c;
+  padding-left: 2rem; /* El texto se desliza ligeramente a la derecha */
+}
+
+/* El circulito detrás del ícono */
+.iconoFondo {
+  background-color: #f1f5f9;
+  color: #16538c;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Cuando pasas el mouse por la opción, el ícono se invierte de color */
+.dropdownItem:hover .iconoFondo {
+  background-color: #16538c;
+  color: #ffffff;
+}
 
 /* =========================================
    2. NIVEL TABLETA (Pantallas >= 768px)
@@ -127,6 +237,41 @@
   /* Aseguramos que siempre se muestre en tableta, sin importar el estado menuActivo */
   .navLinks.menuActivo {
     padding: 0;
+  }
+
+  .contactoWrapper {
+    width: auto;
+    margin-top: 0;
+    margin-left: 1rem; /* Separa el botón del resto de los enlaces */
+  }
+
+  .linkBoton {
+    width: auto;
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  /* En PC, la caja flota como un menú real */
+  .dropdownContacto {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 260px;
+    margin-top: 1.5rem;
+  }
+
+  /* El piquito tipo globo de texto (Solo en PC) */
+  .dropdownContacto::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 30px;
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    transform: rotate(45deg);
+    border-left: 1px solid #f3f4f6;
+    border-top: 1px solid #f3f4f6;
   }
 }
 
