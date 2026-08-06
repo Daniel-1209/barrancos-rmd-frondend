@@ -8,7 +8,7 @@
 
 .contentWrapper {
   max-width: 1200px;
-  padding: 0rem 1.5rem; /* Un poco más de respiro a los lados en celular */
+  padding: 0rem 1.5rem;
   margin: 30px auto;
 }
 
@@ -23,7 +23,7 @@
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 1px; /* Le da un toque más premium al subtítulo */
+  letter-spacing: 1px;
 }
 
 .subtitle {
@@ -80,11 +80,12 @@
 .mainImageWrapper {
   position: relative;
   width: 100%;
-  height: 300px; /* Un poco más alto en celular para no aplastar la imagen */
+  height: 300px;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: zoom-in;
 }
 
 .mainImage {
@@ -94,7 +95,7 @@
   transition: opacity 0.3s ease;
 }
 
-/* Flechas del carrusel */
+/* Flechas del carrusel principal */
 .arrowBtn {
   position: absolute;
   top: 50%;
@@ -102,7 +103,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  width: 44px; /* Un poco más grandes para ser fáciles de tocar en celular */
+  width: 44px;
   height: 44px;
   cursor: pointer;
   font-size: 1.2rem;
@@ -113,19 +114,19 @@
   transition:
     background-color 0.2s,
     transform 0.2s;
-  border-radius: 4px; /* Un pequeño borde redondeado */
+  border-radius: 4px;
 }
 
 .arrowBtn:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  transform: translateY(-50%) scale(1.05); /* Pequeño efecto al pasar el mouse */
+  transform: translateY(-50%) scale(1.05);
 }
 
 .left {
-  left: 10px; /* Separado del borde */
+  left: 10px;
 }
 .right {
-  right: 10px; /* Separado del borde */
+  right: 10px;
 }
 
 /* Cuadrícula de miniaturas */
@@ -136,7 +137,7 @@
 }
 
 .thumbWrapper {
-  position: relative; /* ¡VITAL! Necesario para que Next.js <Image fill> funcione bien */
+  position: relative;
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   overflow: hidden;
@@ -160,9 +161,51 @@
   object-fit: cover;
 }
 
+/* =========================================
+   PAGINACIÓN DE MINIATURAS (NUEVO)
+   ========================================= */
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.pageBtn {
+  background-color: #6d5d4b;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background-color: #554739;
+}
+
+.pageBtn:disabled {
+  background-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pageInfo {
+  font-size: 0.9rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+
 /* Descripción */
 .descriptionSection {
-  text-align: left; /* Mejor para lectura en móvil */
+  text-align: left;
   margin-bottom: 3rem;
 }
 
@@ -211,10 +254,9 @@
     font-size: 2.8rem;
   }
 
-  /* Transformación de la barra de información a Estilo PC */
   .infoBar {
     flex-direction: row;
-    justify-content: space-between; /* Mejor distribución horizontal */
+    justify-content: space-between;
     background-color: #6d5d4b;
     border-radius: 12px;
     padding: 1.5rem 3rem;
@@ -236,7 +278,7 @@
   }
 
   .mainImageWrapper {
-    height: 550px; /* Tamaño imponente para monitores grandes */
+    height: 550px;
     border-radius: 16px;
   }
 
@@ -245,7 +287,6 @@
     gap: 1rem;
   }
 
-  /* Limitamos el ancho del texto en PC para que no sea cansado de leer */
   .descriptionSection {
     text-align: center;
     max-width: 800px;
@@ -270,5 +311,114 @@
   .backButton:hover {
     background-color: #fff7ee;
     color: #bea4a4;
+  }
+}
+
+/* =========================================
+   LIGHTBOX (PANTALLA COMPLETA)
+   ========================================= */
+.lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.92); /* Fondo oscuro semitransparente */
+  z-index: 9999; /* Asegura que esté por encima de todo, incluyendo tu Navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.lightboxContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 85vh; /* Deja espacio para no rozar los bordes de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightboxImage {
+  object-fit: contain; /* CRUCIAL: Muestra la foto entera sin recortarla */
+}
+
+.closeLightboxBtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 3rem;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 10000;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.closeLightboxBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Ajustes opcionales para las flechas dentro del Lightbox */
+.lightboxArrow {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+}
+
+/* =========================================
+   ANIMACIÓN Y ESTILOS DE CARGA (SPINNER)
+   ========================================= */
+
+/* Fondo que cubre la imagen mientras carga (Vista normal) */
+.loaderOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 245, 245, 0.6); /* Fondo clarito sutil */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5; /* Por encima de la foto vieja, por debajo de las flechas */
+}
+
+/* Fondo que cubre la imagen mientras carga (Vista Lightbox oscura) */
+.loaderOverlayLightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+/* El círculo giratorio */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(109, 93, 75, 0.2); /* Borde transparente basado en tu color #6d5d4b */
+  border-top: 4px solid #6d5d4b; /* Color principal */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
