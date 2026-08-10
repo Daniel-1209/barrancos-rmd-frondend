@@ -55,6 +55,51 @@
   color: #cbd5e1; /* Un gris claro para que no resalte tanto como los teléfonos */
 }
 
+.legalContainer {
+  margin-top: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.legalToggleBtn {
+  background: none;
+  border: none;
+  color: #cbcdd2; /* Tono gris discreto */
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+.legalToggleBtn:hover {
+  color: #374151; /* Se oscurece al pasar el mouse */
+}
+
+.legalNotice {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #b6b9bf;
+  max-width: 800px;
+  line-height: 1.4;
+  text-align: center;
+
+  /* Animación suave al aparecer */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* =========================================
    2. NIVEL TABLETA Y PC (Pantallas >= 768px)
    ========================================= */

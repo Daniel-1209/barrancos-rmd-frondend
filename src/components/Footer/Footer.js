@@ -1,13 +1,30 @@
+"use client"; // Obligatorio en Next.js para usar interactividad (clics y estados)
+
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  // Estado para controlar si el aviso legal está visible o no
+  const [mostrarAviso, setMostrarAviso] = useState(false);
+
+  // 1. Creamos la información del contacto en formato vCard (estándar telefónico)
+  const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Barrancos Remodeling
+ORG:Barrancos Remodeling LLC
+TEL:+17045249747
+END:VCARD`;
+
+  // 2. Convertimos esa información en una URL de datos que el navegador pueda "descargar"
+  const vCardUrl = `data:text/vcard;charset=utf-8,${encodeURIComponent(vCardData)}`;
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         {/* SECCIÓN DE CONTACTO */}
         <div className={styles.contactSection}>
-          <a href="tel:+15123440698" className={styles.contactItem}>
+          <a href="tel:+17045249747" className={styles.contactItem}>
             {/* Ícono de Teléfono */}
             <svg
               width="18"
@@ -21,10 +38,16 @@ export default function Footer() {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            <span>512 344 0698</span>
+            <span>704-524-9747</span>
           </a>
 
-          <Link href="/formulario" className={styles.contactItem}>
+          {/* Cambiamos el componente <Link> de Next.js por una etiqueta <a> nativa 
+              para permitir la descarga del archivo de contacto */}
+          <a
+            href={vCardUrl}
+            download="Barrancos_Remodeling.vcf"
+            className={styles.contactItem}
+          >
             {/* Ícono de Usuario / Contacto */}
             <svg
               width="18"
@@ -40,13 +63,33 @@ export default function Footer() {
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
             <span>Contacto</span>
-          </Link>
+          </a>
         </div>
 
         {/* SECCIÓN DE DERECHOS DE AUTOR */}
         <div className={styles.copyrightSection}>
           <p>© 2026 Barrancos Remodeling LLC - Todos los derechos reservados</p>
         </div>
+
+        {/* SECCIÓN DE AVISO LEGAL DE IMÁGENES (BOTÓN Y TEXTO DESPLEGABLE) */}
+        <div className={styles.legalContainer}>
+          <button 
+            onClick={() => setMostrarAviso(!mostrarAviso)} 
+            className={styles.legalToggleBtn}
+          >
+            Política de imágenes
+          </button>
+          
+          {/* Este bloque solo se renderiza si mostrarAviso es verdadero */}
+          {mostrarAviso && (
+            <div className={styles.legalNotice}>
+              <p>
+                <strong>Aviso de Imágenes y Privacidad:</strong> Las fotografías mostradas en este portafolio se utilizan exclusivamente con fines ilustrativos para exhibir la calidad de nuestros servicios. Si usted es el propietario legal de alguna de las propiedades o imágenes mostradas en este sitio web y no desea que su propiedad aparezca en nuestro portafolio, por favor contáctenos al <strong>704-524-9747</strong>. Retiraremos la imagen inmediatamente y sin inconvenientes.
+              </p>
+            </div>
+          )}
+        </div>
+
       </div>
     </footer>
   );

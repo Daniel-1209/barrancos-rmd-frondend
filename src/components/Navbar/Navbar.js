@@ -135,7 +135,7 @@ export default function Navbar() {
             {contactoAbierto && (
               <div className={styles.dropdownContacto}>
                 <a
-                  href="tel:+15123440698"
+                  href="tel:+17045249747"
                   className={styles.dropdownItem}
                   onClick={() => {
                     setContactoAbierto(false);
@@ -161,7 +161,7 @@ export default function Navbar() {
                 </a>
 
                 <a
-                  href="sms:+15123440698?body=Quiero%20un%20estimado%20para%20"
+                  href="sms:+17045249747?body=Quiero%20un%20estimado%20para%20"
                   className={styles.dropdownItem}
                   onClick={() => {
                     setContactoAbierto(false);
