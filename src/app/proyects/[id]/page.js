@@ -166,6 +166,27 @@ export default function ProyectoDetalle({ params }) {
           </section>
         )}
 
+        {/* BARRA DE INFORMACIÓN (Cambia drásticamente de Móvil a PC en el CSS) */}
+        <div className={styles.infoBar}>
+          {/* DESCRIPCIÓN Y BOTÓN DE REGRESO */}
+          <div className={styles.descriptionSection}>
+            <p className={styles.descriptionText}>
+              {ActualProyect?.description}{" "}
+              <a
+                href="sms:+17045249747?body=Quiero%20un%20estimado%20para%20"
+                className={styles.linkText}
+              >
+                Agenda Una Visita Gratis Ahora.
+              </a>
+            </p>
+
+            {/* Asumiendo que tu página principal es "/" */}
+            <button onClick={() => router.back()} className={styles.backButton}>
+              REGRESAR AL PORTAFOLIO &#10230;
+            </button>
+          </div>
+        </div>
+
         {/* LIGHTBOX (MODAL PANTALLA COMPLETA) */}
         {isLightboxOpen && (
           <div
