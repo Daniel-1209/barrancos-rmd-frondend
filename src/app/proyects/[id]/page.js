@@ -61,7 +61,7 @@ export default function ProyectoDetalle({ params }) {
       <div className={styles.contentWrapper}>
         {/* ENCABEZADO */}
         <header className={styles.header}>
-          <h1 className={styles.title}>DETALLES DEL PROYECTO:</h1>
+          <h1 className={styles.title}>PROJECT DETAILS:</h1>
           <h2 className={styles.subtitle}>{ActualProyect?.title}</h2>
         </header>
 
@@ -145,7 +145,7 @@ export default function ProyectoDetalle({ params }) {
                   }
                   disabled={paginaMiniaturas === 0}
                 >
-                  &#10094; Atrás
+                  &#10094; Back
                 </button>
                 <span className={styles.pageInfo}>
                   Pág {paginaMiniaturas + 1} de {totalPaginas}
@@ -159,7 +159,7 @@ export default function ProyectoDetalle({ params }) {
                   }
                   disabled={paginaMiniaturas === totalPaginas - 1}
                 >
-                  Siguiente &#10095;
+                  Next &#10095;
                 </button>
               </div>
             )}
@@ -173,16 +173,16 @@ export default function ProyectoDetalle({ params }) {
             <p className={styles.descriptionText}>
               {ActualProyect?.description}{" "}
               <a
-                href="sms:+17045249747?body=Quiero%20un%20estimado%20para%20"
+                href="sms:+17045249747?body=I%20want%20an%20estimate%20for%20"
                 className={styles.linkText}
               >
-                Agenda Una Visita Gratis Ahora.
+                Schedule a free visit now.
               </a>
             </p>
 
             {/* Asumiendo que tu página principal es "/" */}
             <button onClick={() => router.back()} className={styles.backButton}>
-              REGRESAR AL PORTAFOLIO &#10230;
+              RETURN TO PORTFOLIO &#10230;
             </button>
           </div>
         </div>

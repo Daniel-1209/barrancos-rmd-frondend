@@ -8,11 +8,11 @@ export default function Hero() {
         {/* Textos Principales */}
         <div className={styles.textContent}>
           <h1 className={styles.title}>
-            CONSTRUCCIÓN Y REMODELACIÓN DE PRIMERA CLASE EN ATLANTA
+            PREMIER CONSTRUCTION AND REMODELING IN ATLANTA
           </h1>
           <p className={styles.subtitle}>
-            Expertos en transformaciones de interiores, techos de alta calidad y
-            más.
+            Experts in interior and exterior transformation, high-quality
+            ceilings, and more.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Hero() {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            LLAMA AHORA: 704-524-9747
+            Call Now: 704-524-9747
           </a>
         </div>
 
@@ -60,7 +60,7 @@ export default function Hero() {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <polyline points="19 12 12 19 5 12"></polyline>
           </svg>
-          <span>PORTAFOLIO DE IMÁGENES</span>
+          <span>IMAGE PORTFOLIO</span>
         </div>
       </div>
     </section>

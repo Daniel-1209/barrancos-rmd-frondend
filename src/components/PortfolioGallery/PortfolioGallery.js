@@ -21,10 +21,10 @@ export default function PortfolioGallery() {
     <section id="services" className={styles.portfolioSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>NUESTROS SERVICIOS DISPONIBLES</h2>
+          <h2 className={styles.title}>OUR AVAILABLE SERVICES</h2>
           <p className={styles.subtitle}>
-            Explora nuestra galería de trabajos de alta calidad en remodelación
-            y construcción.
+            Explore our gallery of high-quality remodeling and construction
+            projects.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function PortfolioGallery() {
                     href={`/proyects/${proyect?.link}`}
                     className={styles.viewBtn}
                   >
-                    Ver Proyectos
+                    View Projects
                   </Link>
                 </div>
               </div>

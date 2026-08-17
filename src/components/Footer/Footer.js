@@ -62,34 +62,39 @@ END:VCARD`;
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
-            <span>Contacto</span>
+            <span>Contact</span>
           </a>
         </div>
 
         {/* SECCIÓN DE DERECHOS DE AUTOR */}
         <div className={styles.copyrightSection}>
-          <p>© 2026 Barrancos Remodeling LLC - Todos los derechos reservados</p>
+          <p>© 2026 Barrancos Remodeling LLC - All rights reserved.</p>
         </div>
 
         {/* SECCIÓN DE AVISO LEGAL DE IMÁGENES (BOTÓN Y TEXTO DESPLEGABLE) */}
         <div className={styles.legalContainer}>
-          <button 
-            onClick={() => setMostrarAviso(!mostrarAviso)} 
+          <button
+            onClick={() => setMostrarAviso(!mostrarAviso)}
             className={styles.legalToggleBtn}
           >
-            Política de imágenes
+            Image Policy
           </button>
-          
+
           {/* Este bloque solo se renderiza si mostrarAviso es verdadero */}
           {mostrarAviso && (
             <div className={styles.legalNotice}>
               <p>
-                <strong>Aviso de Imágenes y Privacidad:</strong> Las fotografías mostradas en este portafolio se utilizan exclusivamente con fines ilustrativos para exhibir la calidad de nuestros servicios. Si usted es el propietario legal de alguna de las propiedades o imágenes mostradas en este sitio web y no desea que su propiedad aparezca en nuestro portafolio, por favor contáctenos al <strong>704-524-9747</strong>. Retiraremos la imagen inmediatamente y sin inconvenientes.
+                <strong>Image and Privacy Notice:</strong> The photographs shown
+                in this portfolio are used exclusively for illustrative purposes
+                to showcase the quality of our services. If you are the legal
+                owner of any of the properties or images shown on this website
+                and do not wish your property to appear in our portfolio, please
+                contact us at <strong>704-524-9747</strong>. We will remove the
+                image immediately and without any issues.
               </p>
             </div>
           )}
         </div>
-
       </div>
     </footer>
   );

@@ -20,27 +20,27 @@ export default function AboutUs() {
 
         {/* Contenedor del Texto */}
         <div className={styles.textContent}>
-          <h2 className={styles.tagline}>CONOCE A BARRANCOS REMODELING LLC</h2>
+          <h2 className={styles.tagline}>MEET BARRANCOS REMODELING LLC</h2>
           <h3 className={styles.title}>
-            Transformando espacios en Atlanta, Georgia
+            Transforming spaces in Atlanta, Georgia
           </h3>
 
           <p className={styles.description}>
-            Somos una empresa de contratistas comerciales y residenciales
-            dedicada a ofrecer soluciones integrales de primer nivel. Nos
-            apasiona transformar la visión de nuestros clientes en realidad,
-            brindando acabados de alta calidad en cada proyecto.
+            We are a commercial and residential contracting company dedicated to
+            providing top-tier, comprehensive solutions. We are passionate about
+            turning our clients visions into reality, delivering high-quality
+            finishes on every project.
           </p>
 
           <p className={styles.description}>
-            Además de nuestras renovaciones de interiores, nos especializamos en
-            el mantenimiento de propiedades exteriores. Nuestro equipo combina
-            años de experiencia técnica con los mejores materiales del mercado
-            para garantizar durabilidad, funcionalidad y un diseño excepcional.
+            In addition to our interior renovations, we specialize in exterior
+            property maintenance. Our team combines years of technical expertise
+            with the best materials on the market to ensure durability,
+            functionality, and exceptional design.
           </p>
 
           <Link href="/#services" className={styles.ctaButton}>
-            Explorar Servicios
+            Explore Services
           </Link>
         </div>
       </div>
