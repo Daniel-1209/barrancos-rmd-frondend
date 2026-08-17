@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Gutter installation and repair",
+    "title": "Gutter Installation And Repair",
     "label": "GUTTERS",
     "link": "gutters",
     "location": "Atlanta, GA",
     "image": "https://martinez-rmd-payload-cms-bucket.s3.eu-west-1.amazonaws.com/Gutters/Esteban_Gutters_04.jpg",
-    "description": "Un proyecto desafiante que transformó un espacio anticuado en un refugio moderno y funcional, utilizando materiales de alta gama y diseño personalizado.",
+    "description": "A challenging project that transformed an outdated space into a modern and functional retreat, using high-end materials and custom design.",
     "listOfImages": [
       "https://martinez-rmd-payload-cms-bucket.s3.eu-west-1.amazonaws.com/Gutters/Esteban_Gutters_01.jpg",
       "https://martinez-rmd-payload-cms-bucket.s3.eu-west-1.amazonaws.com/Gutters/Esteban_Gutters_03.jpg",
@@ -35,12 +35,12 @@
   },
   {
     "id": 2,
-    "title": "Roofing installation and repair",
+    "title": "Roofing Installation And Repair",
     "label": "ROOFING",
     "link": "roofing",
     "location": "Atlanta, GA",
     "image": "https://martinez-rmd-payload-cms-bucket.s3.eu-west-1.amazonaws.com/Roofing/Esteban_Roofing_21.jpg",
-    "description": "Un proyecto desafiante que transformó un espacio anticuado en un refugio moderno y funcional, utilizando materiales de alta gama y diseño personalizado.",
+    "description": "A challenging project that transformed an outdated space into a modern and functional retreat, using high-end materials and custom design.",
     "listOfImages": [
       "https://martinez-rmd-payload-cms-bucket.s3.eu-west-1.amazonaws.com/Roofing/Esteban_Roofing_18.jpg",
       "https://martinez-rmd-payload-cms-bucket.s3.eu-west-1.amazonaws.com/Roofing/Esteban_Roofing_12.jpg",
@@ -66,25 +66,25 @@
   },
   {
     "id": 4,
-    "title": "Remodelación de Cocinas",
-    "label": "COCINAS",
-    "link": "cocinas",
+    "title": "Kitchen Remodeling",
+    "label": "KITCHENS",
+    "link": "kitchens",
     "location": "Atlanta, GA",
     "image": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": 5,
-    "title": "Renovación Completa de Baños",
-    "label": "BAÑOS",
-    "link": "banos",
+    "title": "Complete Bathroom Renovation",
+    "label": "BATHROOMS",
+    "link": "bathrooms",
     "location": "Atlanta, GA",
     "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": 7,
-    "title": "Ampliación de Cuartos",
-    "label": "AMPLIACIONES",
-    "link": "ampliaciones",
+    "title": "Room Additions",
+    "label": "ADDITIONS",
+    "link": "additions",
     "location": "Atlanta, GA",
     "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
   }
